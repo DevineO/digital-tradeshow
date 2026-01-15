@@ -3,48 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Digital Platforms Tradeshow Documentation</title>
+
+    <!-- Google Fonts for a sleek title -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* Minimal folder explorer styling */
-        .folder-list { list-style-type: none; padding-left: 0; }
-        .folder-list li { margin: 5px 0; }
-        .folder-list a { text-decoration: none; color: #0073e6; font-weight: bold; }
-        .folder-list a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Digital Platforms Tradeshow Documentation</h1>
-    </header>
+        /* Full-page background */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1564866657311-3aa88e2d8f23?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+        }
 
-    <main>
-        <h2>Folders & Pages</h2>
-        <ul class="folder-list" id="folderView"></ul>
-    </main>
+        header {
+            text-align: center;
+            padding: 100px 20px 50px 20px;
+            background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+        }
 
-    <footer>
-        <p>© 2026 Digital Platforms Tradeshow</p>
-    </footer>
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            margin: 0;
+        }
 
-    <script>
-        // Simple folder list (manually define your folders/files)
-        const folders = [
-            { name: "About", url: "about/" },
-            { name: "Projects", url: "projects/" },
-            { name: "Contact", url: "contact/" },
-            { name: "Resources", url: "resources/" }
-        ];
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+        }
 
-        const folderView = document.getElementById('folderView');
+        /* Folder / page links */
+        .folder-list {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: center;
+        }
 
-        folders.forEach(f => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = f.url;
-            a.textContent = f.name;
-            li.appendChild(a);
-            folderView.appendChild(li);
-        });
-    </script>
-</body>
-</html>
+        .folder-list li {
+            display: inline-block;
+            margin: 20px 15px;
+        }
+
+        .folder-list a {
+            text-decoration: none;
+            color: #ffdd57;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.5);
+            borde
+
+
