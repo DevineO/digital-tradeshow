@@ -2,132 +2,210 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tradeshow Gallery</title>
+    <title>Shared Services Canada – Digital Platforms Gallery</title>
 
-    <!-- Google Font for sleek title -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
+            --purple-accent: rgb(134,62,142);
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
+            --text-dark: #1a1a1a;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background:
-                linear-gradient(rgba(134,62,142,0.6), rgba(0,86,149,0.6)),
-                url('https://images.unsplash.com/photo-1564866657311-3aa88e2d8f23?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: #FFFFFF;
+            background: var(--light-grey);
+            color: var(--text-dark);
         }
 
+        /* Header */
         header {
-            text-align: center;
-            padding: 60px 20px 20px 20px;
+            background: #ffffff;
+            border-bottom: 4px solid var(--dark-blue);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.8em;
+            font-size: 2.4em;
             margin: 0;
-            border-bottom: 2px solid #FFFFFF; /* thin underline */
-            display: inline-block;
-            padding-bottom: 10px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
 
-        /* Back to Home button */
-        .back-home {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 12px 25px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #FFFFFF;
-            background: rgba(0,86,149,0.85); /* Dark Blue */
-            border-radius: 10px;
+        .sub-title {
+            font-size: 0.9em; /* smaller than main title */
+            display: block;
+            margin-top: 0.2em;
+            font-weight: normal;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--purple-accent);
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark-blue);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1100px;
+            display: flex;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 22px;
+            color: #ffffff;
             text-decoration: none;
-            transition: background 0.3s, transform 0.3s;
+            font-weight: 600;
         }
 
-        .back-home:hover {
-            background: rgba(79,138,190,0.9); /* Medium Blue */
-            transform: scale(1.05);
+        nav a:hover {
+            background: var(--medium-blue);
         }
 
-        .gallery-container {
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
+        }
+
+        main h2 {
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        main p {
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Gallery grid */
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 20px;
         }
 
-        .gallery-container img {
+        .gallery-grid img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
         }
 
-        .gallery-container img:hover {
-            transform: scale(1.05);
-        }
-
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(134,62,142,0.85);
-            font-size: 0.9em;
-            margin-top: 40px;
+            background: #ffffff;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 60px;
         }
 
-        /* Responsive adjustments */
-        @media(max-width:768px){
-            h1{font-size:2.2em;}
-            .gallery-container{padding:20px; gap:15px;}
-            .back-home {font-size:1em; padding:10px 20px;}
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
-        @media(max-width:480px){
-            h1{font-size:1.8em;}
-            .back-home {font-size:0.9em; padding:8px 16px;}
+
+        /* Canada wordmark */
+        .canada-wordmark img {
+            height: 32px;
+            opacity: 0.85;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .sub-title {
+                font-size: 0.8em;
+            }
+
+            main {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .footer-inner {
+                justify-content: center;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Tradeshow Gallery</h1>
-        <!-- Back to Home button -->
-        <br>
-        <a href="../index.html" class="back-home">Back to Home</a>
-    </header>
 
-    <main>
-        <div class="gallery-container" id="gallery"></div>
-    </main>
+<header>
+    <div class="header-inner">
+        <h1>
+            Digital Platforms<br>
+            <span class="sub-title">Shared Services Canada</span>
+        </h1>
+        <div class="underline"></div>
+    </div>
+</header>
 
-    <footer>
-        <p>© 2026 Digital Platforms Tradeshow</p>
-    </footer>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_index.html">About</a></li>
+        <li><a href="projects_index.html">Projects</a></li>
+        <li><a href="gallery_index.html">Gallery</a></li>
+        <li><a href="contact_index.html">Contact</a></li>
+    </ul>
+</nav>
 
-    <script>
-        const galleryContainer = document.getElementById('gallery');
-        const imageFolder = "images/";
+<main>
+    <h2>Gallery</h2>
+    <p>Explore highlights from our Digital Platforms initiatives. Click any image to view it larger.</p>
 
-        // List your uploaded image filenames here
-        const images = [
-            "photo1.jpg",
-            "photo2.jpg"
-            // Add more filenames as needed
-        ];
+    <div class="gallery-grid">
+        <img src="gallery/photo1.jpg" alt="Gallery Photo 1">
+        <img src="gallery/photo2.jpg" alt="Gallery Photo 2">
+        <img src="gallery/photo3.jpg" alt="Gallery Photo 3">
+        <!-- Add more images as needed following the naming scheme photo4.jpg, photo5.jpg, etc. -->
+    </div>
+</main>
 
-        // Loop through the array and create image elements
-        images.forEach(filename => {
-            const img = document.createElement('img');
-            img.src = imageFolder + filename;
-            img.alt = "Tradeshow Image";
-            galleryContainer.appendChild(img);
-        });
-    </script>
+<footer>
+    <div class="footer-inner">
+        <div class="canada-wordmark">
+            <img
+                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+                alt="Government of Canada">
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
