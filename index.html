@@ -23,6 +23,7 @@
             color: var(--text-dark);
         }
 
+        /* Header */
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
@@ -47,21 +48,17 @@
             margin-top: 10px;
         }
 
+        /* Navigation */
         nav {
             background: var(--dark-blue);
         }
 
         nav ul {
             list-style: none;
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
             max-width: 1100px;
-            margin: 0 auto;
             display: flex;
-        }
-
-        nav li {
-            margin: 0;
         }
 
         nav a {
@@ -70,13 +67,13 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1em;
         }
 
         nav a:hover {
             background: var(--medium-blue);
         }
 
+        /* Main content */
         main {
             max-width: 1100px;
             margin: 40px auto;
@@ -87,17 +84,16 @@
         }
 
         main h2 {
-            font-size: 1.6em;
             margin-top: 0;
             color: var(--dark-blue);
         }
 
         main p {
-            font-size: 1.05em;
             line-height: 1.6;
             max-width: 900px;
         }
 
+        /* Footer */
         footer {
             background: #ffffff;
             border-top: 1px solid var(--border-grey);
@@ -107,9 +103,19 @@
         .footer-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
 
+        /* Canada wordmark */
+        .canada-wordmark img {
+            height: 32px;
+            opacity: 0.85;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-wrap: wrap;
@@ -122,6 +128,10 @@
             main {
                 margin: 20px;
                 padding: 25px;
+            }
+
+            .footer-inner {
+                justify-content: center;
             }
         }
     </style>
@@ -150,18 +160,23 @@
     <h2>Purpose</h2>
     <p>
         This site serves as a centralized reference for Digital Platforms tradeshow
-        participation, showcasing key initiatives, project highlights, and visual
-        documentation to support knowledge sharing and collaboration.
+        participation, showcasing initiatives, project highlights, and visual
+        documentation to support collaboration and knowledge sharing.
     </p>
 
     <p>
-        Content on this site is intended for internal reference and ongoing program
-        documentation.
+        Content is intended for internal reference and ongoing program documentation.
     </p>
 </main>
 
 <footer>
-    <div class="footer-inner"></div>
+    <div class="footer-inner">
+        <div class="canada-wordmark">
+            <img
+                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+                alt="Government of Canada">
+        </div>
+    </div>
 </footer>
 
 </body>
