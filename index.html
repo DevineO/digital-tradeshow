@@ -1,183 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shared Services Canada – Digital Platforms</title>
+  <meta charset="utf-8">
+  <title>Shared Services Canada - Digital Platforms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <!-- WET-BOEW base -->
+  <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/css/theme.min.css">
 
-    <style>
-        :root {
-            --dark-blue: rgb(0,86,149);
-            --medium-blue: rgb(79,138,190);
-            --purple-accent: rgb(134,62,142);
-            --light-grey: #f5f6f7;
-            --border-grey: #dcdcdc;
-            --text-dark: #1a1a1a;
-        }
+  <style>
+    /* Parliament skyline band */
+    .parliament-band {
+      background-color: #26374a; /* GC dark blue */
+      overflow: hidden;
+      line-height: 0;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--light-grey);
-            color: var(--text-dark);
-        }
+    .parliament-band svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        /* Header */
-        header {
-            background: #ffffff;
-            border-bottom: 4px solid var(--dark-blue);
-        }
+    /* Footer wordmark */
+    .canada-footer {
+      background: #ffffff;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #e1e1e1;
+    }
 
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 25px 20px;
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.4em;
-            margin: 0;
-        }
-
-        .underline {
-            width: 80px;
-            height: 4px;
-            background: var(--purple-accent);
-            margin-top: 10px;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--dark-blue);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 1100px;
-            display: flex;
-        }
-
-        nav a {
-            display: block;
-            padding: 15px 22px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            background: var(--medium-blue);
-        }
-
-        /* Main content */
-        main {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #ffffff;
-            border: 1px solid var(--border-grey);
-            border-radius: 4px;
-        }
-
-        main h2 {
-            margin-top: 0;
-            color: var(--dark-blue);
-        }
-
-        main p {
-            line-height: 1.6;
-            max-width: 900px;
-        }
-
-        /* Footer */
-        footer {
-            background: #ffffff;
-            border-top: 1px solid var(--border-grey);
-            margin-top: 60px;
-        }
-
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        /* Canada wordmark */
-        .canada-wordmark img {
-            height: 32px;
-            opacity: 0.85;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
-        }
-    </style>
+    .canada-footer img {
+      max-width: 200px;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-inner">
-        <h1>Shared Services Canada – Digital Platforms</h1>
-        <div class="underline"></div>
-    </div>
-</header>
+<main class="container">
+  <h1>Shared Services Canada</h1>
+  <p class="lead">Digital Platforms</p>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_index.html">About</a></li>
-        <li><a href="projects_index.html">Projects</a></li>
-        <li><a href="gallery/">Gallery</a></li>
-        <li><a href="contact_index.html">Contact</a></li>
-    </ul>
-</nav>
-
-<main>
-    <h2>Purpose</h2>
-    <p>
-        This site serves as a centralized reference for Digital Platforms tradeshow
-        participation, showcasing initiatives, project highlights, and visual
-        documentation to support collaboration and knowledge sharing.
-    </p>
-
-    <p>
-        Content is intended for internal reference and ongoing program documentation.
-    </p>
+  <p>
+    This site provides information and resources related to digital platforms,
+    services, and initiatives within Shared Services Canada.
+  </p>
 </main>
 
-<footer>
-    <div class="footer-inner">
-        <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
-        </div>
-    </div>
+<!-- Parliament skyline band -->
+<section class="parliament-band" aria-hidden="true">
+  <svg viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid slice">
+    <path fill="#3b4f65" d="
+      M0,120 
+      L80,100 
+      L120,110 
+      L160,90 
+      L200,100 
+      L240,80 
+      L280,95 
+      L320,60 
+      L360,85 
+      L400,70 
+      L440,90 
+      L480,60 
+      L520,95 
+      L560,80 
+      L600,40 
+      L640,75 
+      L680,60 
+      L720,90 
+      L760,70 
+      L800,95 
+      L840,80 
+      L880,100 
+      L920,90 
+      L960,110 
+      L1000,95 
+      L1040,110 
+      L1080,100 
+      L1120,120 
+      L1200,130 
+      L1200,160 
+      L0,160 Z
+    "/>
+  </svg>
+</section>
+
+<!-- Canada wordmark at bottom -->
+<footer class="canada-footer">
+  <img
+    src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+    alt="Government of Canada"
+  >
 </footer>
+
+<!-- WET scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://wet-boew.github.io/wet-boew/js/wet-boew.min.js"></script>
 
 </body>
 </html>
