@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Digital Platforms Tradeshow Documentation</title>
 
-    <!-- Clean professional font -->
+    <!-- Government-style clean font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -12,121 +12,167 @@
             --dark-blue: rgb(0,86,149);
             --medium-blue: rgb(79,138,190);
             --purple-accent: rgb(134,62,142);
-            --white: #ffffff;
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
+            --text-dark: #1a1a1a;
         }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background:
-                linear-gradient(
-                    rgba(0,86,149,0.85),
-                    rgba(79,138,190,0.85)
-                );
-            color: var(--white);
+            background: var(--light-grey);
+            color: var(--text-dark);
         }
 
-        /* Top navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 18px;
-            background: rgba(0,0,0,0.15);
-            backdrop-filter: blur(6px);
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 6px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: rgba(134,62,142,0.85); /* purple accent only */
-        }
-
+        /* Top government-style banner */
         header {
-            text-align: center;
-            padding: 90px 20px 40px;
+            background: #ffffff;
+            border-bottom: 4px solid var(--dark-blue);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3em;
+            font-size: 2.4em;
             margin: 0;
-            padding-bottom: 14px;
-            display: inline-block;
-            border-bottom: 2px solid var(--purple-accent); /* thin accent line */
         }
 
-        .subtitle {
-            margin-top: 20px;
-            font-size: 1.2em;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--purple-accent);
+            margin-top: 10px;
         }
 
+        /* Navigation */
+        nav {
+            background: var(--dark-blue);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 22px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            background: var(--medium-blue);
+        }
+
+        /* Main content */
         main {
-            max-width: 1000px;
-            margin: 60px auto;
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 40px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 14px;
-            text-align: center;
+            background: #ffffff;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
         }
 
+        main h2 {
+            font-size: 1.6em;
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        main p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Footer (Canada.ca inspired) */
         footer {
-            text-align: center;
+            background: #ffffff;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 20px;
             font-size: 0.9em;
-            opacity: 0.85;
+            color: #555;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2em; }
-            nav { flex-wrap: wrap; gap: 15px; }
-            main { margin: 30px 15px; padding: 30px 20px; }
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            main {
+                margin: 20px;
+                padding: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about_index.html">About</a>
-        <a href="projects_index.html">Projects</a>
-        <a href="gallery/">Gallery</a>
-        <a href="contact_index.html">Contact</a>
-    </nav>
-
-    <header>
+<header>
+    <div class="header-inner">
         <h1>Digital Platforms Tradeshow Documentation</h1>
-        <p class="subtitle">
-            Centralized documentation showcasing innovation, projects, and engagement
-            across digital platforms and tradeshows.
-        </p>
-    </header>
+        <div class="underline"></div>
+    </div>
+</header>
 
-    <main>
-        <p>
-            This site provides a streamlined reference for tradeshow materials, project
-            highlights, and visual documentation to support collaboration and knowledge sharing.
-        </p>
-    </main>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_index.html">About</a></li>
+        <li><a href="projects_index.html">Projects</a></li>
+        <li><a href="gallery/">Gallery</a></li>
+        <li><a href="contact_index.html">Contact</a></li>
+    </ul>
+</nav>
 
-    <footer>
+<main>
+    <h2>Purpose</h2>
+    <p>
+        This site serves as a centralized reference for Digital Platforms tradeshow
+        participation, showcasing key initiatives, project highlights, and visual
+        documentation to support knowledge sharing and collaboration.
+    </p>
+
+    <p>
+        Content on this site is intended for internal reference and ongoing program
+        documentation.
+    </p>
+</main>
+
+<footer>
+    <div class="footer-inner">
         © 2026 Digital Platforms
-    </footer>
+    </div>
+</footer>
 
 </body>
 </html>
