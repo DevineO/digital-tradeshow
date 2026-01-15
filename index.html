@@ -41,6 +41,11 @@
             margin: 0;
         }
 
+        .sub-title {
+            font-size: 1.5em;
+            display: block;
+        }
+
         .underline {
             width: 80px;
             height: 4px;
@@ -125,6 +130,10 @@
                 font-size: 2em;
             }
 
+            .sub-title {
+                font-size: 1.2em; /* scales smaller on mobile */
+            }
+
             main {
                 margin: 20px;
                 padding: 25px;
@@ -141,7 +150,10 @@
 
 <header>
     <div class="header-inner">
-        <h1>Shared Services Canada – Digital Platforms</h1>
+        <h1>
+            Digital Platforms<br>
+            <span class="sub-title">Shared Services Canada</span>
+        </h1>
         <div class="underline"></div>
     </div>
 </header>
