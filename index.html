@@ -4,142 +4,129 @@
     <meta charset="UTF-8">
     <title>Digital Platforms Tradeshow Documentation</title>
 
-    <!-- Google Font for sleek title -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Clean professional font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Body & background with gradient overlay */
+        :root {
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
+            --purple-accent: rgb(134,62,142);
+            --white: #ffffff;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
             background:
                 linear-gradient(
-                    rgba(134, 62, 142, 0.6), /* top purple overlay */
-                    rgba(0, 86, 149, 0.6)    /* bottom dark blue overlay */
-                ),
-                url('https://images.unsplash.com/photo-1564866657311-3aa88e2d8f23?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: #FFFFFF;
+                    rgba(0,86,149,0.85),
+                    rgba(79,138,190,0.85)
+                );
+            color: var(--white);
         }
 
-        /* Header */
+        /* Top navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 18px;
+            background: rgba(0,0,0,0.15);
+            backdrop-filter: blur(6px);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(134,62,142,0.85); /* purple accent only */
+        }
+
         header {
             text-align: center;
-            padding: 100px 20px 60px 20px;
+            padding: 90px 20px 40px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3em;
             margin: 0;
-            color: #FFFFFF;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            border-bottom: 2px solid #FFFFFF; /* thin underline */
+            padding-bottom: 14px;
             display: inline-block;
-            padding-bottom: 10px;
+            border-bottom: 2px solid var(--purple-accent); /* thin accent line */
         }
 
-        /* Folder / page links */
-        .folder-list {
-            list-style-type: none;
-            padding-left: 0;
+        .subtitle {
+            margin-top: 20px;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 14px;
             text-align: center;
-            margin-top: 60px;
         }
 
-        .folder-list li {
-            display: inline-block;
-            margin: 20px 15px;
-        }
-
-        .folder-list a {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-size: 1.6em; /* bigger buttons */
-            font-weight: bold;
-            padding: 15px 30px;
-            background: rgba(0, 86, 149, 0.85); /* Dark Blue buttons */
-            border-radius: 10px;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-        }
-
-        .folder-list a:hover {
-            background: rgba(79, 138, 190, 0.9); /* Medium Blue hover */
-            transform: scale(1.05);
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            margin-top: 60px;
             padding: 20px;
-            background: rgba(134, 62, 142, 0.85); /* Purple footer */
             font-size: 0.9em;
-            color: #FFFFFF;
+            opacity: 0.85;
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2em;
-            }
-            .folder-list a {
-                font-size: 1.4em;
-            }
-            .folder-list li {
-                display: block;
-                margin: 12px 0;
-            }
-            .folder-list a {
-                width: 70%;
-                padding: 12px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .folder-list a {
-                font-size: 1.2em;
-            }
+            h1 { font-size: 2.2em; }
+            nav { flex-wrap: wrap; gap: 15px; }
+            main { margin: 30px 15px; padding: 30px 20px; }
         }
     </style>
 </head>
+
 <body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about_index.html">About</a>
+        <a href="projects_index.html">Projects</a>
+        <a href="gallery/">Gallery</a>
+        <a href="contact_index.html">Contact</a>
+    </nav>
+
     <header>
         <h1>Digital Platforms Tradeshow Documentation</h1>
+        <p class="subtitle">
+            Centralized documentation showcasing innovation, projects, and engagement
+            across digital platforms and tradeshows.
+        </p>
     </header>
 
     <main>
-        <ul class="folder-list" id="folderView"></ul>
+        <p>
+            This site provides a streamlined reference for tradeshow materials, project
+            highlights, and visual documentation to support collaboration and knowledge sharing.
+        </p>
     </main>
 
     <footer>
-        <p>© 2026 Digital Platforms Tradeshow</p>
+        © 2026 Digital Platforms
     </footer>
 
-    <script>
-        // Folder links
-        const folders = [
-            { name: "About", url: "about/" },
-            { name: "Projects", url: "projects/" },
-            { name: "Contact", url: "contact/" },
-            { name: "Gallery", url: "gallery/" } // replaced Resources with Gallery
-        ];
-
-        const folderView = document.getElementById('folderView');
-
-        folders.forEach(f => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = f.url;
-            a.textContent = f.name;
-            li.appendChild(a);
-            folderView.appendChild(li);
-        });
-    </script>
 </body>
 </html>
