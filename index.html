@@ -26,7 +26,7 @@
         /* Header */
         header {
             text-align: center;
-            padding: 80px 20px 40px 20px;
+            padding: 100px 20px 60px 20px;
         }
 
         h1 {
@@ -35,13 +35,9 @@
             margin: 0;
             color: #FFFFFF;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 50px;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            border-bottom: 2px solid #FFFFFF; /* thin underline */
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         /* Folder / page links */
@@ -49,19 +45,20 @@
             list-style-type: none;
             padding-left: 0;
             text-align: center;
+            margin-top: 60px;
         }
 
         .folder-list li {
             display: inline-block;
-            margin: 15px 10px;
+            margin: 20px 15px;
         }
 
         .folder-list a {
             text-decoration: none;
             color: #FFFFFF;
-            font-size: 1.2em;
+            font-size: 1.6em; /* bigger buttons */
             font-weight: bold;
-            padding: 12px 25px;
+            padding: 15px 30px;
             background: rgba(0, 86, 149, 0.85); /* Dark Blue buttons */
             border-radius: 10px;
             transition: background 0.3s, transform 0.3s;
@@ -76,7 +73,7 @@
         /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             padding: 20px;
             background: rgba(134, 62, 142, 0.85); /* Purple footer */
             font-size: 0.9em;
@@ -88,15 +85,15 @@
             h1 {
                 font-size: 2.2em;
             }
-            h2 {
-                font-size: 1.5em;
+            .folder-list a {
+                font-size: 1.4em;
             }
             .folder-list li {
-                display: block; /* stack buttons vertically on mobile */
-                margin: 10px 0;
+                display: block;
+                margin: 12px 0;
             }
             .folder-list a {
-                width: 80%; /* full width for mobile buttons */
+                width: 70%;
                 padding: 12px 0;
             }
         }
@@ -105,11 +102,8 @@
             h1 {
                 font-size: 1.8em;
             }
-            h2 {
-                font-size: 1.2em;
-            }
             .folder-list a {
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
     </style>
@@ -120,7 +114,6 @@
     </header>
 
     <main>
-        <h2>Folders & Pages</h2>
         <ul class="folder-list" id="folderView"></ul>
     </main>
 
@@ -134,7 +127,7 @@
             { name: "About", url: "about/" },
             { name: "Projects", url: "projects/" },
             { name: "Contact", url: "contact/" },
-            { name: "Resources", url: "resources/" }
+            { name: "Gallery", url: "gallery/" } // replaced Resources with Gallery
         ];
 
         const folderView = document.getElementById('folderView');
