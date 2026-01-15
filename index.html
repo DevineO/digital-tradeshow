@@ -1,183 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shared Services Canada – Digital Platforms</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Tradeshow</title>
+  <style>
+    /* General Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    /* Header / Title Section */
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: #f5f5f5;
+    }
 
-    <style>
-        :root {
-            --dark-blue: rgb(0,86,149);
-            --medium-blue: rgb(79,138,190);
-            --purple-accent: rgb(134,62,142);
-            --light-grey: #f5f6f7;
-            --border-grey: #dcdcdc;
-            --text-dark: #1a1a1a;
-        }
+    .main-title {
+      font-size: 3rem; /* main title size */
+      margin: 0;
+      line-height: 1.2;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--light-grey);
-            color: var(--text-dark);
-        }
+    .sub-title {
+      font-size: 1.5rem; /* 1/2 of main title */
+      display: block;
+      margin-top: 0.2rem;
+      font-weight: normal;
+      color: #003366; /* optional SSC blue */
+    }
 
-        /* Header */
-        header {
-            background: #ffffff;
-            border-bottom: 4px solid var(--dark-blue);
-        }
+    /* Navigation */
+    nav {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 25px 20px;
-        }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.4em;
-            margin: 0;
-        }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-        .underline {
-            width: 80px;
-            height: 4px;
-            background: var(--purple-accent);
-            margin-top: 10px;
-        }
+    /* Content Sections */
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
 
-        /* Navigation */
-        nav {
-            background: var(--dark-blue);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 1100px;
-            display: flex;
-        }
-
-        nav a {
-            display: block;
-            padding: 15px 22px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            background: var(--medium-blue);
-        }
-
-        /* Main content */
-        main {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #ffffff;
-            border: 1px solid var(--border-grey);
-            border-radius: 4px;
-        }
-
-        main h2 {
-            margin-top: 0;
-            color: var(--dark-blue);
-        }
-
-        main p {
-            line-height: 1.6;
-            max-width: 900px;
-        }
-
-        /* Footer */
-        footer {
-            background: #ffffff;
-            border-top: 1px solid var(--border-grey);
-            margin-top: 60px;
-        }
-
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        /* Canada wordmark */
-        .canada-wordmark img {
-            height: 32px;
-            opacity: 0.85;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #f5f5f5;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <div class="header-inner">
-        <h1>Shared Services Canada – Digital Platforms</h1>
-        <div class="underline"></div>
-    </div>
-</header>
+  <header>
+    <h1 class="main-title">
+      Digital Platforms<br>
+      <span class="sub-title">Shared Services Canada</span>
+    </h1>
+  </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_index.html">About</a></li>
-        <li><a href="projects_index.html">Projects</a></li>
-        <li><a href="gallery/">Gallery</a></li>
-        <li><a href="contact_index.html">Contact</a></li>
-    </ul>
-</nav>
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#tradeshow">Tradeshow</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<main>
-    <h2>Purpose</h2>
-    <p>
-        This site serves as a centralized reference for Digital Platforms tradeshow
-        participation, showcasing initiatives, project highlights, and visual
-        documentation to support collaboration and knowledge sharing.
-    </p>
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>Welcome to the Digital Platforms tradeshow experience. Explore the latest initiatives and innovations from Shared Services Canada.</p>
+  </section>
 
-    <p>
-        Content is intended for internal reference and ongoing program documentation.
-    </p>
-</main>
+  <section id="tradeshow">
+    <h2>Tradeshow</h2>
+    <p>Discover interactive booths, demos, and presentations showcasing our digital solutions and services.</p>
+  </section>
 
-<footer>
-    <div class="footer-inner">
-        <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
-        </div>
-    </div>
-</footer>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>For more information, reach out to our team at <a href="mailto:info@ssc-spc.gc.ca">info@ssc-spc.gc.ca</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2026 Shared Services Canada
+  </footer>
 
 </body>
 </html>
