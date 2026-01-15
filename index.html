@@ -13,15 +13,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
-
-            /* Background image with gradient overlay */
             background:
                 linear-gradient(
-                    rgba(134, 62, 142, 0.6), /* top overlay purple */
-                    rgba(0, 86, 149, 0.6)    /* bottom overlay dark blue */
+                    rgba(134, 62, 142, 0.6), /* top purple overlay */
+                    rgba(0, 86, 149, 0.6)    /* bottom dark blue overlay */
                 ),
                 url('https://images.unsplash.com/photo-1564866657311-3aa88e2d8f23?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-
             background-size: cover;
             color: #FFFFFF;
         }
@@ -29,7 +26,7 @@
         /* Header */
         header {
             text-align: center;
-            padding: 100px 20px 50px 20px;
+            padding: 80px 20px 40px 20px;
         }
 
         h1 {
@@ -37,7 +34,7 @@
             font-size: 3em;
             margin: 0;
             color: #FFFFFF;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* subtle shadow for readability */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
 
         h2 {
@@ -56,7 +53,7 @@
 
         .folder-list li {
             display: inline-block;
-            margin: 20px 15px;
+            margin: 15px 10px;
         }
 
         .folder-list a {
@@ -84,6 +81,36 @@
             background: rgba(134, 62, 142, 0.85); /* Purple footer */
             font-size: 0.9em;
             color: #FFFFFF;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .folder-list li {
+                display: block; /* stack buttons vertically on mobile */
+                margin: 10px 0;
+            }
+            .folder-list a {
+                width: 80%; /* full width for mobile buttons */
+                padding: 12px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .folder-list a {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
