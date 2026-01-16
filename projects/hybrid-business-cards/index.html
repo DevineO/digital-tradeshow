@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shared Services Canada – Digital Platforms</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
+            --purple-accent: rgb(134,62,142);
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
+            --text-dark: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--light-grey);
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            border-bottom: 4px solid var(--dark-blue);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4em;
+            margin: 0;
+        }
+
+        .sub-title {
+            font-size: 0.9em; /* matches all other pages */
+            font-weight: normal;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--purple-accent);
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark-blue);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1100px;
+            display: flex;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 22px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: var(--medium-blue);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
+        }
+
+        main h2 {
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        main p {
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .canada-wordmark img {
+            height: 32px;
+            opacity: 0.85;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            main {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .footer-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <h1>
+            Digital Platforms
+            <span class="sub-title">Shared Services Canada</span>
+        </h1>
+        <div class="underline"></div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects_index.html">Projects</a></li>
+        <li><a href="../gallery/index.html">Gallery</a></li>
+        <li><a href="../contact_index.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>SSC Hybrid Business Cards</h2>
+    <p>View our presentation below. Use the arrows inside the PowerPoint viewer to navigate through the slides.</p>
+
+    <!-- Embedded PowerPoint iframe -->
+    <iframe 
+        src="<iframe src="https://163gc.sharepoint.com/sites/DigitalPlatformsandInteroperability/_layouts/15/Doc.aspx?sourcedoc={17de6a21-2390-4dda-9f0e-4b565646435e}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>" 
+        style="width:100%; height:600px;" 
+        frameborder="0">
+        This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+    </iframe>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="canada-wordmark">
+            <img
+                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+                alt="Government of Canada">
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
