@@ -33,9 +33,6 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 25px 20px;
-        }
-
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,19 +42,18 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 2.4em;
             margin: 0;
-            line-height: 1.2;
         }
 
         .sub-title {
+            font-size: 0.9em;
+            font-weight: normal;
             display: block;
-            font-size: 0.55em;
-            font-weight: 600;
+            margin-top: 4px;
         }
 
         .header-logo {
-            height: auto;
             max-height: 90px;
-            opacity: 0.9;
+            height: auto;
         }
 
         .underline {
@@ -107,27 +103,39 @@
             color: var(--dark-blue);
         }
 
+        main p {
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Project folder grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
 
-        .project-tile {
-            border: 1px solid var(--border-grey);
-            padding: 30px;
+        .project-card {
             text-align: center;
-            border-radius: 6px;
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 600;
-            transition: background 0.2s, transform 0.2s;
+            transition: transform 0.2s;
         }
 
-        .project-tile:hover {
-            background: var(--light-grey);
-            transform: translateY(-3px);
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .project-card span {
+            display: block;
+            font-weight: 600;
         }
 
         /* Footer */
@@ -177,19 +185,19 @@
 
 <header>
     <div class="header-inner">
-        <div class="header-content">
+        <div>
             <h1>
                 Digital Platforms
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
-
-            <img
-                src="gallery/images/ssc-leaf-purple.png"
-                alt="Shared Services Canada"
-                class="header-logo"
-            >
+            <div class="underline"></div>
         </div>
-        <div class="underline"></div>
+
+        <img
+            src="gallery/images/ssc-leaf-purple.png"
+            alt="Shared Services Canada"
+            class="header-logo"
+        >
     </div>
 </header>
 
@@ -197,29 +205,34 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="projects_index.html">Projects</a></li>
-        <li><a href="gallery/">Gallery</a></li>
+        <li><a href="gallery/index.html">Gallery</a></li>
         <li><a href="contact_index.html">Contact</a></li>
     </ul>
 </nav>
 
 <main>
     <h2>Projects</h2>
+    <p>Click any project below to explore its materials:</p>
 
     <div class="project-grid">
-        <a class="project-tile" href="#">
-            Internet of Things (IoT)
+        <a class="project-card" href="projects/iot/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="IoT Folder Icon">
+            <span>Internet of Things (IoT)</span>
         </a>
 
-        <a class="project-tile" href="#">
-            RFID
+        <a class="project-card" href="projects/rfid/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="RFID Folder Icon">
+            <span>RFID</span>
         </a>
 
-        <a class="project-tile" href="#">
-            Digital Twins
+        <a class="project-card" href="projects/digital-twins/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Digital Twins Folder Icon">
+            <span>Digital Twins</span>
         </a>
 
-        <a class="project-tile" href="projects/hybrid-business-cards/">
-            SSC Hybrid Business Cards
+        <a class="project-card" href="projects/hybrid-business-cards/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Hybrid Business Cards Folder Icon">
+            <span>SSC Hybrid Business Cards</span>
         </a>
     </div>
 </main>
@@ -227,9 +240,7 @@
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
