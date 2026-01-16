@@ -5,8 +5,6 @@
     <title>Shared Services Canada – Digital Platforms</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <!-- GLightbox CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
     <style>
         :root {
@@ -25,6 +23,7 @@
             color: var(--text-dark);
         }
 
+        /* Header */
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
@@ -63,6 +62,7 @@
             height: 90px;
         }
 
+        /* Navigation */
         nav {
             background: var(--dark-blue);
         }
@@ -87,6 +87,7 @@
             background: var(--medium-blue);
         }
 
+        /* Main content */
         main {
             max-width: 1100px;
             margin: 40px auto;
@@ -106,6 +107,7 @@
             max-width: 900px;
         }
 
+        /* Slides grid */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -114,7 +116,7 @@
             justify-items: center;
         }
 
-        .slide-card img {
+        .slide-card img, .slide-card video {
             width: 100%;
             max-width: 300px;
             height: auto;
@@ -123,6 +125,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        /* Footer */
         footer {
             background: #ffffff;
             border-top: 1px solid var(--border-grey);
@@ -143,6 +146,7 @@
             opacity: 0.85;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-wrap: wrap;
@@ -159,6 +163,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -172,7 +177,7 @@
         </div>
 
         <div class="header-logo">
-            <img src="../../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+            <img src="../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
         </div>
     </div>
 </header>
@@ -191,40 +196,42 @@
     <p>Click on any slide or video below to view:</p>
 
     <div class="project-grid">
-        <!-- Slides -->
-        <a href="slides/Slide1.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        <div class="slide-card">
             <img src="slides/Slide1.jpg" alt="Slide 1">
-        </a>
-        <a href="slides/Slide2.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide2.jpg" alt="Slide 2">
-        </a>
-        <a href="slides/Slide3.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide3.jpg" alt="Slide 3">
-        </a>
-        <a href="slides/Slide4.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide4.jpg" alt="Slide 4">
-        </a>
-        <a href="slides/Slide5.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide5.jpg" alt="Slide 5">
-        </a>
-        <a href="slides/Slide6.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide6.jpg" alt="Slide 6">
-        </a>
-        <a href="slides/Slide7.jpg" class="slide-card glightbox" data-gallery="ssc-slides">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide7.jpg" alt="Slide 7">
-        </a>
-        <!-- Video -->
-        <a href="slides/slide_video.mp4" class="slide-card glightbox" data-gallery="ssc-slides" data-type="video" data-poster="slides/slide_video_thumbnail.jpg">
-            <img src="slides/slide_video_thumbnail.jpg" alt="Video Slide">
-        </a>
+        </div>
+        <!-- Video slide -->
+        <div class="slide-card">
+            <video controls poster="slides/slide_video_thumbnail.jpg">
+                <source src="slides/slide_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
-        <!-- New Download Section -->
-    <h2 style="margin-top:50px;">Download</h2>
-    <p>Please click the link below to download the SSC Hybrid Business Cards PowerPoint presentation:</p>
-    <p><a href="slides/SSC_Hybrid_Business_Cards.pptx" target="_blank">Download PowerPoint</a></p>
+    <h2>Download</h2>
+    <p>Please click the link below to view SSC Hybrid Business Cards PowerPoint presentation (view-only).</p>
+    <a href="https://1drv.ms/p/c/679c44f923b17c1a/IQADeYiNE9xlT4T_mT04d0IYATFcZkV7YovRzqOJmK62iS8?e=sjvMfg" target="_blank">View PowerPoint (Read-Only)</a>
+
 </main>
-    
+
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
@@ -232,12 +239,6 @@
         </div>
     </div>
 </footer>
-
-<!-- GLightbox JS -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
-</script>
 
 </body>
 </html>
