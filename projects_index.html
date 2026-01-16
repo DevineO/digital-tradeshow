@@ -1,23 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Projects — Digital Platforms Documentation</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #26374a;
+      padding: 12px 24px;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Page container */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    /* Folder grid */
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .folder {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 30px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #26374a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .folder:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .folder-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .folder-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <a href="../">Home</a>
-            <a href="../about/">About</a>
-            <a href="../projects/">Projects</a>
-            <a href="../contact/">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <p>This is the Projects page. You can showcase your tradeshow projects here.</p>
-    </main>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../gallery/index.html">Gallery</a>
+    <a href="../projects/index.html">Projects</a>
+    <a href="../contact_index.html">Contact</a>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>Projects</h1>
+
+    <div class="folder-grid">
+      <a href="iot/index.html" class="folder">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Internet of Things (IoT)</div>
+      </a>
+
+      <a href="rfid/index.html" class="folder">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">RFID</div>
+      </a>
+
+      <a href="digital-twins/index.html" class="folder">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Digital Twins</div>
+      </a>
+
+      <a href="hybrid-business-cards/index.html" class="folder">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">SSC Hybrid Business Cards</div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    © Government of Canada
+  </footer>
+
 </body>
 </html>
-
