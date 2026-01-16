@@ -92,7 +92,6 @@
             color: var(--dark-blue);
         }
 
-        /* Gallery grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -208,11 +207,9 @@
         <img src="images/photo13.jpg" alt="Gallery Photo 13">
         <img src="images/photo14.jpg" alt="Gallery Photo 14">
         <img src="images/photo15.jpg" alt="Gallery Photo 15">
-        <!-- Add photo3.jpg, photo4.jpg, etc. -->
     </div>
 </main>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
     <span class="nav-arrow left" id="prev">&#10094;</span>
     <img id="lightbox-img" src="">
@@ -231,6 +228,8 @@
     const images = document.querySelectorAll('.gallery-grid img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
     let currentIndex = 0;
 
     function showImage(index) {
@@ -243,26 +242,32 @@
         img.addEventListener('click', () => showImage(index));
     });
 
-    document.getElementById('prev').onclick = () => {
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         lightboxImg.src = images[currentIndex].src;
-    };
+    });
 
-    document.getElementById('next').onclick = () => {
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         currentIndex = (currentIndex + 1) % images.length;
         lightboxImg.src = images[currentIndex].src;
-    };
+    });
 
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') document.getElementById('prev').click();
-            if (e.key === 'ArrowRight') document.getElementById('next').click();
-            if (e.key === 'Escape') lightbox.style.display = 'none';
-        }
+    lightboxImg.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 
     lightbox.addEventListener('click', () => {
         lightbox.style.display = 'none';
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === 'Escape') lightbox.style.display = 'none';
+        }
     });
 </script>
 
