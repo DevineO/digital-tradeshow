@@ -1,149 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Shared Services Canada – Digital Platforms Projects</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-    /* Header */
-    header {
-      background-color: #ffffff;
-      padding: 20px 24px 10px;
-      border-bottom: 4px solid #26374a;
-    }
+    <style>
+        :root {
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
+            --purple-accent: rgb(134,62,142);
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
+            --text-dark: #1a1a1a;
+        }
 
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--light-grey);
+            color: var(--text-dark);
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #26374a;
-    }
+        /* Header */
+        header {
+            background: #ffffff;
+            border-bottom: 4px solid var(--dark-blue);
+        }
 
-    .wordmark img {
-      height: 40px;
-    }
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
 
-    /* Navigation tabs */
-    nav {
-      margin-top: 16px;
-      display: flex;
-      gap: 24px;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-    }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4em;
+            margin: 0;
+        }
 
-    nav a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #26374a;
-      padding-bottom: 6px;
-    }
+        .sub-title {
+            font-size: 0.9em;
+            display: block;
+            margin-top: 0.2em;
+            font-weight: normal;
+        }
 
-    nav a:hover {
-      border-bottom: 3px solid #26374a;
-    }
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--purple-accent);
+            margin-top: 10px;
+        }
 
-    /* Main container */
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        /* Navigation */
+        nav {
+            background: var(--dark-blue);
+        }
 
-    /* Folder grid */
-    .folder-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
+        nav ul {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1100px;
+            display: flex;
+        }
 
-    .folder {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 30px 20px;
-      text-align: center;
-      text-decoration: none;
-      color: #26374a;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+        nav a {
+            display: block;
+            padding: 15px 22px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    .folder:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
+        nav a:hover {
+            background: var(--medium-blue);
+        }
 
-    .folder-icon {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
+        }
 
-    .folder-title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-  </style>
+        main h2 {
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        main p {
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Project folders */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border-grey);
+            border-radius: 6px;
+            padding: 30px 25px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #ffffff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .canada-wordmark img {
+            height: 32px;
+            opacity: 0.85;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .sub-title {
+                font-size: 0.8em;
+            }
+
+            main {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .footer-inner {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <h1>Projects</h1>
-
-      <div class="wordmark">
-        <img src="../images/canada-wordmark.png" alt="Canada wordmark">
-      </div>
+<header>
+    <div class="header-inner">
+        <h1>
+            Projects<br>
+            <span class="sub-title">Digital Platforms</span>
+        </h1>
+        <div class="underline"></div>
     </div>
+</header>
 
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../gallery/index.html">Gallery</a>
-      <a href="../projects/index.html">Projects</a>
-      <a href="../contact_index.html">Contact</a>
-    </nav>
-  </header>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery/index.html">Gallery</a></li>
+        <li><a href="projects_index.html">Projects</a></li>
+        <li><a href="contact_index.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- Main content -->
-  <div class="container">
-    <div class="folder-grid">
-      <a href="iot/index.html" class="folder">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Internet of Things (IoT)</div>
-      </a>
+<main>
+    <h2>Our Focus Areas</h2>
+    <p>Explore the key Digital Platforms project areas below. Click any folder to view more.</p>
 
-      <a href="rfid/index.html" class="folder">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">RFID</div>
-      </a>
+    <div class="project-grid">
+        <a href="projects/iot/index.html" class="project-card">
+            <div class="project-icon">📁</div>
+            <div class="project-title">Internet of Things (IoT)</div>
+        </a>
 
-      <a href="digital-twins/index.html" class="folder">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Digital Twins</div>
-      </a>
+        <a href="projects/rfid/index.html" class="project-card">
+            <div class="project-icon">📁</div>
+            <div class="project-title">RFID</div>
+        </a>
 
-      <a href="hybrid-business-cards/index.html" class="folder">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">SSC Hybrid Business Cards</div>
-      </a>
+        <a href="projects/digital-twins/index.html" class="project-card">
+            <div class="project-icon">📁</div>
+            <div class="project-title">Digital Twins</div>
+        </a>
+
+        <a href="projects/hybrid-business-cards/index.html" class="project-card">
+            <div class="project-icon">📁</div>
+            <div class="project-title">SSC Hybrid Business Cards</div>
+        </a>
     </div>
-  </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="canada-wordmark">
+            <img
+                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+                alt="Government of Canada">
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
