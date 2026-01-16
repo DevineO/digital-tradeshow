@@ -42,7 +42,7 @@
         }
 
         .sub-title {
-            font-size: 0.9em; /* corrected to match all other pages */
+            font-size: 0.9em;
             font-weight: normal;
             display: block;
             margin-top: 4px;
@@ -100,39 +100,24 @@
             max-width: 900px;
         }
 
-        /* Project folders */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        main ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .project-card {
-            border: 1px solid var(--border-grey);
-            border-radius: 6px;
-            padding: 30px 25px;
-            text-decoration: none;
-            color: var(--text-dark);
-            background: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
-
-        .project-icon {
-            font-size: 2.4rem;
+        main li {
             margin-bottom: 15px;
-            color: var(--dark-blue);
         }
 
-        .project-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
+        main a.project-link {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        main a.project-link:hover {
+            color: var(--medium-blue);
         }
 
         /* Footer */
@@ -201,37 +186,20 @@
 
 <main>
     <h2>Projects</h2>
-    <p>Select a focus area below to explore Digital Platforms initiatives.</p>
+    <p>Click any project below to view its page and related materials:</p>
 
-    <div class="project-grid">
-        <a href="#" class="project-card">
-            <div class="project-icon">📁</div>
-            <div class="project-title">Internet of Things (IoT)</div>
-        </a>
-
-        <a href="#" class="project-card">
-            <div class="project-icon">📁</div>
-            <div class="project-title">RFID</div>
-        </a>
-
-        <a href="#" class="project-card">
-            <div class="project-icon">📁</div>
-            <div class="project-title">Digital Twins</div>
-        </a>
-
-        <a href="#" class="project-card">
-            <div class="project-icon">📁</div>
-            <div class="project-title">SSC Hybrid Business Cards</div>
-        </a>
-    </div>
+    <ul>
+        <li><a class="project-link" href="projects/iot/">Internet of Things (IoT)</a></li>
+        <li><a class="project-link" href="projects/rfid/">RFID</a></li>
+        <li><a class="project-link" href="projects/digital-twins/">Digital Twins</a></li>
+        <li><a class="project-link" href="projects/hybrid-business-cards/">SSC Hybrid Business Cards</a></li>
+    </ul>
 </main>
 
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
