@@ -6,8 +6,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- GLightbox CSS -->
+    <!-- GLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
     <style>
         :root {
@@ -180,7 +181,7 @@
         </div>
 
         <div class="header-logo">
-            <img src="../../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+            <img src="../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
         </div>
     </div>
 </header>
@@ -199,6 +200,7 @@
     <p>Click on any slide or video below to view:</p>
 
     <div class="project-grid">
+        <!-- Image slides -->
         <div class="slide-card">
             <a href="slides/Slide1.jpg" class="glightbox" data-gallery="ssc-slides">
                 <img src="slides/Slide1.jpg" alt="Slide 1">
@@ -234,12 +236,11 @@
                 <img src="slides/Slide7.jpg" alt="Slide 7">
             </a>
         </div>
-        <!-- Video slide -->
+
+        <!-- Video slide with correct thumbnail -->
         <div class="slide-card">
-            <a href="slides/slide_video.mp4" class="glightbox" data-gallery="ssc-slides" data-type="video">
-                <video poster="slides/slide_video_thumbnail.jpg">
-                    <source src="slides/slide_video.mp4" type="video/mp4">
-                </video>
+            <a href="slides/slide_video.mp4" class="glightbox" data-gallery="ssc-slides" data-type="video" data-poster="slides/slide_video_thumbnail.jpg">
+                <img src="slides/slide_video_thumbnail.jpg" alt="Video Slide">
             </a>
         </div>
     </div>
@@ -253,12 +254,10 @@
     </div>
 </footer>
 
-<!-- GLightbox JS -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  const lightbox = GLightbox({
-    selector: '.glightbox'
-  });
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
 </script>
 
 </body>
