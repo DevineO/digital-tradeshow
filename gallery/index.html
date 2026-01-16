@@ -26,12 +26,16 @@
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
+            position: relative;
         }
 
         .header-inner {
             max-width: 1100px;
             margin: 0 auto;
             padding: 25px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         h1 {
@@ -52,6 +56,10 @@
             height: 4px;
             background: var(--purple-accent);
             margin-top: 10px;
+        }
+
+        .header-logo img {
+            height: 60px; /* Adjust size as needed */
         }
 
         nav {
@@ -170,11 +178,16 @@
 
 <header>
     <div class="header-inner">
-        <h1>
-            Digital Platforms<br>
-            <span class="sub-title">Shared Services Canada</span>
-        </h1>
-        <div class="underline"></div>
+        <div>
+            <h1>
+                Digital Platforms<br>
+                <span class="sub-title">Shared Services Canada</span>
+            </h1>
+            <div class="underline"></div>
+        </div>
+        <div class="header-logo">
+            <img src="../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+        </div>
     </div>
 </header>
 
