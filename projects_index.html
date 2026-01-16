@@ -23,6 +23,7 @@
             color: var(--text-dark);
         }
 
+        /* Header */
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
@@ -62,6 +63,7 @@
             height: auto;
         }
 
+        /* Navigation */
         nav {
             background: var(--dark-blue);
         }
@@ -86,6 +88,7 @@
             background: var(--medium-blue);
         }
 
+        /* Main content */
         main {
             max-width: 1100px;
             margin: 40px auto;
@@ -105,6 +108,7 @@
             max-width: 900px;
         }
 
+        /* Project folder grid */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -134,6 +138,7 @@
             font-weight: 600;
         }
 
+        /* Footer */
         footer {
             background: #ffffff;
             border-top: 1px solid var(--border-grey);
@@ -155,22 +160,10 @@
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
+            nav ul { flex-wrap: wrap; }
+            h1 { font-size: 2em; }
+            main { margin: 20px; padding: 25px; }
+            .footer-inner { justify-content: center; }
         }
     </style>
 </head>
@@ -180,18 +173,12 @@
 <header>
     <div class="header-inner">
         <div>
-            <h1>
-                Digital Platforms
+            <h1>Digital Platforms
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
             <div class="underline"></div>
         </div>
-
-        <img
-            src="gallery/images/ssc-leaf-purple.png"
-            alt="Shared Services Canada"
-            class="header-logo"
-        >
+        <img src="gallery/images/ssc-leaf-purple.png" alt="Shared Services Canada" class="header-logo">
     </div>
 </header>
 
@@ -209,9 +196,14 @@
     <p>Click any project below to explore its materials:</p>
 
     <div class="project-grid">
-        <a class="project-card" href="projects/3d-printing-and-design/hybrid-business-cards/">
-            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Hybrid Business Cards Folder Icon">
+        <a class="project-card" href="projects/3d-printing-and-design/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="3D Printing Folder Icon">
             <span>3D Printing and Design</span>
+        </a>
+
+        <a class="project-card" href="projects/rfid/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="RFID Folder Icon">
+            <span>RFID</span>
         </a>
 
         <a class="project-card" href="projects/digital-twins/">
@@ -222,11 +214,6 @@
         <a class="project-card" href="projects/internet-of-things/">
             <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="IoT Folder Icon">
             <span>Internet of Things (IoT)</span>
-        </a>
-
-        <a class="project-card" href="projects/rfid/">
-            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="RFID Folder Icon">
-            <span>RFID</span>
         </a>
     </div>
 </main>
