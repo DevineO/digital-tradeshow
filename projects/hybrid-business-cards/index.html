@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shared Services Canada – Digital Platforms</title>
+    <title>SSC Hybrid Business Cards – Digital Platforms</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
@@ -34,8 +34,8 @@
             margin: 0 auto;
             padding: 25px 20px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
 
         h1 {
@@ -46,9 +46,9 @@
 
         .sub-title {
             font-size: 0.9em;
-            font-weight: normal;
             display: block;
-            margin-top: 4px;
+            margin-top: 0.2em;
+            font-weight: normal;
         }
 
         .underline {
@@ -59,7 +59,7 @@
         }
 
         .header-logo img {
-            height: 90px; /* Fixed height for logo */
+            height: 90px;
         }
 
         /* Navigation */
@@ -166,18 +166,13 @@
             top: 50%;
             transform: translateY(-50%);
             color: #fff;
-            font-size: 3em;
+            font-size: 2em;
             font-weight: bold;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.4);
             border: none;
             cursor: pointer;
-            padding: 0 15px;
+            padding: 0 12px;
             border-radius: 4px;
-            z-index: 10000;
-        }
-
-        .lightbox-prev:hover, .lightbox-next:hover {
-            background: rgba(0,0,0,0.6);
         }
 
         .lightbox-close {
@@ -215,35 +210,6 @@
             height: 32px;
             opacity: 0.85;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
-
-            .header-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-logo {
-                margin-top: 15px;
-            }
-        }
     </style>
 </head>
 
@@ -253,7 +219,7 @@
     <div class="header-inner">
         <div>
             <h1>
-                Digital Platforms
+                3D Printing and Design
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
             <div class="underline"></div>
@@ -274,34 +240,18 @@
 </nav>
 
 <main>
-    <h2>Hybrid Business Cards</h2>
-    <p>Please click on any slide to enlarge. The last slide contains a short video outlining our SSC Hybrid Business Cards initiative.</p>
+    <h2>SSC Hybrid Business Cards</h2>
+    <p>Click on any slide to enlarge. The last slide contains a short video outlining our SSC Hybrid Business Cards initiative.</p>
 
     <div class="gallery-grid" id="gallery">
-        <div class="gallery-item">
-            <img src="slides/Slide1.jpg" alt="Slide 1">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide2.jpg" alt="Slide 2">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide3.jpg" alt="Slide 3">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide4.jpg" alt="Slide 4">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide5.jpg" alt="Slide 5">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide6.jpg" alt="Slide 6">
-        </div>
-        <div class="gallery-item">
-            <img src="slides/Slide7.jpg" alt="Slide 7">
-        </div>
-        <div class="gallery-item">
-            <video src="slides/slide_video.mp4" controls></video>
-        </div>
+        <div class="gallery-item"><img src="slides/Slide1.jpg" alt="Slide 1"></div>
+        <div class="gallery-item"><img src="slides/Slide2.jpg" alt="Slide 2"></div>
+        <div class="gallery-item"><img src="slides/Slide3.jpg" alt="Slide 3"></div>
+        <div class="gallery-item"><img src="slides/Slide4.jpg" alt="Slide 4"></div>
+        <div class="gallery-item"><img src="slides/Slide5.jpg" alt="Slide 5"></div>
+        <div class="gallery-item"><img src="slides/Slide6.jpg" alt="Slide 6"></div>
+        <div class="gallery-item"><img src="slides/Slide7.jpg" alt="Slide 7"></div>
+        <div class="gallery-item"><video src="slides/slide_video.mp4" controls></video></div>
     </div>
 </main>
 
