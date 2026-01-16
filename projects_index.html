@@ -13,34 +13,56 @@
       color: #333;
     }
 
-    /* Navigation */
+    /* Header */
+    header {
+      background-color: #ffffff;
+      padding: 20px 24px 10px;
+      border-bottom: 4px solid #26374a;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #26374a;
+    }
+
+    .wordmark img {
+      height: 40px;
+    }
+
+    /* Navigation tabs */
     nav {
-      background-color: #26374a;
-      padding: 12px 24px;
+      margin-top: 16px;
       display: flex;
       gap: 24px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
     }
 
     nav a {
-      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
+      color: #26374a;
+      padding-bottom: 6px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      border-bottom: 3px solid #26374a;
     }
 
-    /* Page container */
+    /* Main container */
     .container {
       max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-      font-size: 28px;
     }
 
     /* Folder grid */
@@ -75,30 +97,31 @@
       font-size: 18px;
       font-weight: bold;
     }
-
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 14px;
-      color: #666;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../gallery/index.html">Gallery</a>
-    <a href="../projects/index.html">Projects</a>
-    <a href="../contact_index.html">Contact</a>
-  </nav>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Projects</h1>
+
+      <div class="wordmark">
+        <img src="../images/canada-wordmark.png" alt="Canada wordmark">
+      </div>
+    </div>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../gallery/index.html">Gallery</a>
+      <a href="../projects/index.html">Projects</a>
+      <a href="../contact_index.html">Contact</a>
+    </nav>
+  </header>
 
   <!-- Main content -->
   <div class="container">
-    <h1>Projects</h1>
-
     <div class="folder-grid">
       <a href="iot/index.html" class="folder">
         <div class="folder-icon">📁</div>
@@ -121,10 +144,6 @@
       </a>
     </div>
   </div>
-
-  <footer>
-    © Government of Canada
-  </footer>
 
 </body>
 </html>
