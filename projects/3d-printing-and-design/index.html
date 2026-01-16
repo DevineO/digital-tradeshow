@@ -23,6 +23,7 @@
             color: var(--text-dark);
         }
 
+        /* Header */
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
@@ -47,7 +48,7 @@
             font-size: 0.9em;
             font-weight: normal;
             display: block;
-            margin-top: 0.2em;
+            margin-top: 4px;
         }
 
         .underline {
@@ -57,8 +58,9 @@
             margin-top: 10px;
         }
 
-        .header-logo img {
-            height: 90px;
+        .header-logo {
+            max-height: 90px;
+            height: auto;
         }
 
         nav {
@@ -158,8 +160,6 @@
             h1 { font-size: 2em; }
             main { margin: 20px; padding: 25px; }
             .footer-inner { justify-content: center; }
-            .header-inner { flex-direction: column; align-items: flex-start; }
-            .header-logo { margin-top: 15px; }
         }
     </style>
 </head>
@@ -169,15 +169,12 @@
 <header>
     <div class="header-inner">
         <div>
-            <h1>
-                3D Printing and Design<br>
+            <h1>3D Printing and Design
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
             <div class="underline"></div>
         </div>
-        <div class="header-logo">
-            <img src="../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
-        </div>
+        <img src="../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo" class="header-logo">
     </div>
 </header>
 
@@ -192,10 +189,10 @@
 
 <main>
     <h2>3D Printing and Design</h2>
-    <p>Select a subfolder below to explore materials:</p>
+    <p>Select a subfolder to explore its materials:</p>
 
     <div class="project-grid">
-        <a class="project-card" href="hybrid-business-cards/">
+        <a class="project-card" href="ssc-hybrid-business-cards/">
             <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="SSC Hybrid Business Cards">
             <span>SSC Hybrid Business Cards</span>
         </a>
@@ -210,7 +207,7 @@
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img src="../../gallery/images/canada-wordmark.png" alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
