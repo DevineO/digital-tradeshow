@@ -46,14 +46,9 @@
 
         .sub-title {
             font-size: 0.9em;
-            font-weight: normal;
             display: block;
-            margin-top: 4px;
-        }
-
-        .header-logo {
-            max-height: 90px;
-            height: auto;
+            margin-top: 0.2em;
+            font-weight: normal;
         }
 
         .underline {
@@ -61,6 +56,10 @@
             height: 4px;
             background: var(--purple-accent);
             margin-top: 10px;
+        }
+
+        .header-logo img {
+            height: 90px;
         }
 
         /* Navigation */
@@ -108,37 +107,22 @@
             max-width: 900px;
         }
 
-        /* Slides gallery */
-        .slides-grid {
+        /* Slides grid */
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             margin-top: 30px;
+            justify-items: center;
         }
 
-        .slide-card {
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-dark);
-            transition: transform 0.2s;
-        }
-
-        .slide-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .slide-card img {
+        .slide-card img, .slide-card video {
             width: 100%;
-            max-width: 200px;
+            max-width: 300px;
             height: auto;
             border: 1px solid var(--border-grey);
             border-radius: 4px;
-        }
-
-        .slide-card span {
-            display: block;
-            font-weight: 600;
-            margin-top: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         /* Footer */
@@ -176,10 +160,6 @@
                 margin: 20px;
                 padding: 25px;
             }
-
-            .footer-inner {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -190,53 +170,60 @@
     <div class="header-inner">
         <div>
             <h1>
-                Digital Platforms<br>
+                Digital Platforms
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
             <div class="underline"></div>
         </div>
-        <img src="../../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo" class="header-logo">
+
+        <div class="header-logo">
+            <img src="../../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+        </div>
     </div>
 </header>
 
 <nav>
     <ul>
-        <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../../projects_index.html">Projects</a></li>
-        <li><a href="../../../gallery/index.html">Gallery</a></li>
-        <li><a href="../../../contact_index.html">Contact</a></li>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../projects_index.html">Projects</a></li>
+        <li><a href="../../gallery/index.html">Gallery</a></li>
+        <li><a href="../../contact_index.html">Contact</a></li>
     </ul>
 </nav>
 
 <main>
     <h2>SSC Hybrid Business Cards</h2>
-    <p>Click on any slide below to view it:</p>
+    <p>Click on any slide or video below to view:</p>
 
-    <div class="slides-grid">
-        <a class="slide-card" href="slides/Slide1.jpg" target="_blank">
+    <div class="project-grid">
+        <div class="slide-card">
             <img src="slides/Slide1.jpg" alt="Slide 1">
-        </a>
-        <a class="slide-card" href="slides/Slide2.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide2.jpg" alt="Slide 2">
-        </a>
-        <a class="slide-card" href="slides/Slide3.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide3.jpg" alt="Slide 3">
-        </a>
-        <a class="slide-card" href="slides/Slide4.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide4.jpg" alt="Slide 4">
-        </a>
-        <a class="slide-card" href="slides/Slide5.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide5.jpg" alt="Slide 5">
-        </a>
-        <a class="slide-card" href="slides/Slide6.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide6.jpg" alt="Slide 6">
-        </a>
-        <a class="slide-card" href="slides/Slide7.jpg" target="_blank">
+        </div>
+        <div class="slide-card">
             <img src="slides/Slide7.jpg" alt="Slide 7">
-        </a>
-        <a class="slide-card" href="slides/slide_video.mp4" target="_blank">
-            <img src="slides/slide_video_thumbnail.jpg" alt="Slide Video Thumbnail">
-        </a>
+        </div>
+        <!-- Video slide -->
+        <div class="slide-card">
+            <video controls poster="slides/slide_video_thumbnail.jpg">
+                <source src="slides/slide_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 </main>
 
