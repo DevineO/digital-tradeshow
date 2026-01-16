@@ -23,7 +23,6 @@
             color: var(--text-dark);
         }
 
-        /* Header */
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
@@ -55,7 +54,6 @@
             margin-top: 10px;
         }
 
-        /* Navigation */
         nav {
             background: var(--dark-blue);
         }
@@ -80,7 +78,6 @@
             background: var(--medium-blue);
         }
 
-        /* Main content */
         main {
             max-width: 1100px;
             margin: 40px auto;
@@ -95,23 +92,16 @@
             color: var(--dark-blue);
         }
 
-        main p {
-            line-height: 1.6;
-            max-width: 900px;
-        }
-
         /* Gallery grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .gallery-grid img {
             width: 100%;
-            height: auto;
-            border: 1px solid var(--border-grey);
             border-radius: 4px;
             cursor: pointer;
             transition: transform 0.2s;
@@ -121,27 +111,41 @@
             transform: scale(1.03);
         }
 
-        /* Lightbox styles */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
+        /* Lightbox */
+        .lightbox {
             display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
 
-        .lightbox-overlay img {
+        .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 4px;
         }
 
-        /* Footer */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #ffffff;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+        }
+
+        .nav-arrow.left {
+            left: 30px;
+        }
+
+        .nav-arrow.right {
+            right: 30px;
+        }
+
         footer {
             background: #ffffff;
             border-top: 1px solid var(--border-grey);
@@ -154,37 +158,11 @@
             padding: 30px 20px;
             display: flex;
             justify-content: flex-end;
-            align-items: center;
         }
 
-        /* Canada wordmark */
         .canada-wordmark img {
             height: 32px;
             opacity: 0.85;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .sub-title {
-                font-size: 0.8em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -212,7 +190,7 @@
 
 <main>
     <h2>Gallery</h2>
-    <p>Explore photos from our Digital Platforms tradeshows and events. Click on any image to enlarge.</p>
+    <p>Explore photos from our Digital Platforms tradeshows and events. Click on any image to view it larger.</p>
 
     <div class="gallery-grid">
         <img src="images/photo1.jpg" alt="Gallery Photo 1">
@@ -230,36 +208,57 @@
         <img src="images/photo13.jpg" alt="Gallery Photo 13">
         <img src="images/photo14.jpg" alt="Gallery Photo 14">
         <img src="images/photo15.jpg" alt="Gallery Photo 15">
-        <!-- Add more images here, following the naming scheme photo3.jpg, photo4.jpg, etc. -->
+        <!-- Add photo3.jpg, photo4.jpg, etc. -->
     </div>
 </main>
 
-<!-- Lightbox overlay -->
-<div class="lightbox-overlay" id="lightbox">
-    <img src="" alt="Expanded photo">
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="nav-arrow left" id="prev">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="nav-arrow right" id="next">&#10095;</span>
 </div>
 
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
 
 <script>
-    // Lightbox functionality
+    const images = document.querySelectorAll('.gallery-grid img');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const galleryImages = document.querySelectorAll('.gallery-grid img');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
 
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
-        });
+    function showImage(index) {
+        currentIndex = index;
+        lightboxImg.src = images[index].src;
+        lightbox.style.display = 'flex';
+    }
+
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => showImage(index));
+    });
+
+    document.getElementById('prev').onclick = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+    };
+
+    document.getElementById('next').onclick = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+            if (e.key === 'ArrowRight') document.getElementById('next').click();
+            if (e.key === 'Escape') lightbox.style.display = 'none';
+        }
     });
 
     lightbox.addEventListener('click', () => {
