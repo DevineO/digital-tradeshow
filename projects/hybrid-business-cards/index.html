@@ -42,7 +42,7 @@
         }
 
         .sub-title {
-            font-size: 0.9em; /* matches all other pages */
+            font-size: 0.9em;
             font-weight: normal;
             display: block;
             margin-top: 4px;
@@ -100,6 +100,89 @@
             max-width: 900px;
         }
 
+        /* Slides gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 1px solid var(--border-grey);
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item span {
+            display: block;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Lightbox overlay */
+        .lightbox-overlay {
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .lightbox-content img, .lightbox-content video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 2em;
+            font-weight: bold;
+            background: rgba(0,0,0,0.4);
+            border: none;
+            cursor: pointer;
+            padding: 0 12px;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            top: 10px;
+            right: 10px;
+            transform: none;
+            font-size: 1.5em;
+        }
+
+        .lightbox-prev {
+            left: -50px;
+        }
+
+        .lightbox-next {
+            right: -50px;
+        }
+
         /* Footer */
         footer {
             background: #ffffff;
@@ -139,6 +222,14 @@
             .footer-inner {
                 justify-content: center;
             }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -157,35 +248,137 @@
 
 <nav>
     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../projects_index.html">Projects</a></li>
-        <li><a href="../gallery/index.html">Gallery</a></li>
-        <li><a href="../contact_index.html">Contact</a></li>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../projects_index.html">Projects</a></li>
+        <li><a href="../../gallery/index.html">Gallery</a></li>
+        <li><a href="../../contact_index.html">Contact</a></li>
     </ul>
 </nav>
 
 <main>
-    <h2>SSC Hybrid Business Cards</h2>
-    <p>View our presentation below. Use the arrows inside the PowerPoint viewer to navigate through the slides.</p>
+    <h2>Hybrid Business Cards</h2>
+    <p>Click any slide to view it larger. The last item is a video.</p>
 
-    <!-- Embedded PowerPoint iframe -->
-    <iframe 
-        src="<iframe src="https://163gc.sharepoint.com/sites/DigitalPlatformsandInteroperability/_layouts/15/Doc.aspx?sourcedoc={17de6a21-2390-4dda-9f0e-4b565646435e}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>" 
-        style="width:100%; height:600px;" 
-        frameborder="0">
-        This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
-    </iframe>
+    <div class="gallery-grid" id="gallery">
+        <div class="gallery-item">
+            <img src="slides/Slide1.jpg" alt="Slide 1">
+            <span>Slide 1</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide2.jpg" alt="Slide 2">
+            <span>Slide 2</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide3.jpg" alt="Slide 3">
+            <span>Slide 3</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide4.jpg" alt="Slide 4">
+            <span>Slide 4</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide5.jpg" alt="Slide 5">
+            <span>Slide 5</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide6.jpg" alt="Slide 6">
+            <span>Slide 6</span>
+        </div>
+        <div class="gallery-item">
+            <img src="slides/Slide7.jpg" alt="Slide 7">
+            <span>Slide 7</span>
+        </div>
+        <div class="gallery-item">
+            <video src="slides/Slide_Video.mp4" controls></video>
+            <span>Video Slide</span>
+        </div>
+    </div>
 </main>
+
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <button class="lightbox-prev" id="lightbox-prev">&#10094;</button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <button class="lightbox-next" id="lightbox-next">&#10095;</button>
+</div>
 
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
+
+<script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    let currentIndex = 0;
+    const items = [];
+
+    galleryItems.forEach(item => {
+        const media = item.querySelector('img') || item.querySelector('video');
+        items.push(media);
+        item.addEventListener('click', () => {
+            currentIndex = items.indexOf(media);
+            openLightbox(currentIndex);
+        });
+    });
+
+    function openLightbox(index){
+        lightbox.style.display = 'flex';
+        updateLightboxContent();
+    }
+
+    function closeLightbox(){
+        lightbox.style.display = 'none';
+        lightboxContent.innerHTML = '';
+    }
+
+    function updateLightboxContent(){
+        const media = items[currentIndex];
+        lightboxContent.innerHTML = '';
+        if(media.tagName === 'IMG'){
+            const img = document.createElement('img');
+            img.src = media.src;
+            lightboxContent.appendChild(img);
+        } else if(media.tagName === 'VIDEO'){
+            const video = document.createElement('video');
+            video.src = media.src;
+            video.controls = true;
+            video.autoplay = true;
+            lightboxContent.appendChild(video);
+        }
+    }
+
+    function showPrev(){
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateLightboxContent();
+    }
+
+    function showNext(){
+        currentIndex = (currentIndex + 1) % items.length;
+        updateLightboxContent();
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    document.addEventListener('keydown', (e) => {
+        if(lightbox.style.display === 'flex'){
+            if(e.key === 'ArrowLeft') showPrev();
+            if(e.key === 'ArrowRight') showNext();
+            if(e.key === 'Escape') closeLightbox();
+        }
+    });
+</script>
 
 </body>
 </html>
