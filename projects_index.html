@@ -100,24 +100,34 @@
             max-width: 900px;
         }
 
-        main ul {
-            list-style: none;
-            padding-left: 0;
+        /* Project folder grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        main li {
-            margin-bottom: 15px;
-        }
-
-        main a.project-link {
+        .project-card {
+            text-align: center;
             text-decoration: none;
-            color: var(--dark-blue);
-            font-weight: 600;
-            font-size: 1.1em;
+            color: var(--text-dark);
+            transition: transform 0.2s;
         }
 
-        main a.project-link:hover {
-            color: var(--medium-blue);
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .project-card span {
+            display: block;
+            font-weight: 600;
         }
 
         /* Footer */
@@ -186,14 +196,29 @@
 
 <main>
     <h2>Projects</h2>
-    <p>Click any project below to view its page and related materials:</p>
+    <p>Click any project below to explore its materials:</p>
 
-    <ul>
-        <li><a class="project-link" href="projects/iot/">Internet of Things (IoT)</a></li>
-        <li><a class="project-link" href="projects/rfid/">RFID</a></li>
-        <li><a class="project-link" href="projects/digital-twins/">Digital Twins</a></li>
-        <li><a class="project-link" href="projects/hybrid-business-cards/">SSC Hybrid Business Cards</a></li>
-    </ul>
+    <div class="project-grid">
+        <a class="project-card" href="projects/iot/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="IoT Folder Icon">
+            <span>Internet of Things (IoT)</span>
+        </a>
+
+        <a class="project-card" href="projects/rfid/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="RFID Folder Icon">
+            <span>RFID</span>
+        </a>
+
+        <a class="project-card" href="projects/digital-twins/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Digital Twins Folder Icon">
+            <span>Digital Twins</span>
+        </a>
+
+        <a class="project-card" href="projects/hybrid-business-cards/">
+            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Hybrid Business Cards Folder Icon">
+            <span>SSC Hybrid Business Cards</span>
+        </a>
+    </div>
 </main>
 
 <footer>
