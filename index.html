@@ -8,8 +8,8 @@
 
     <style>
         :root {
-            --dark-blue: rgb(0,86,149);      /* nav background */
-            --medium-blue: rgb(79,138,190);  /* hover color you like */
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
             --purple-accent: rgb(134,62,142);
             --light-grey: #f5f6f7;
             --border-grey: #dcdcdc;
@@ -32,6 +32,9 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 25px 20px;
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,9 +47,17 @@
         }
 
         .sub-title {
-            font-size: 0.9em;
             display: block;
-            margin-top: 0.2em;
+            font-size: 0.9em;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+
+        /* ✅ Logo scaled to about half size */
+        .header-logo {
+            height: auto;
+            max-height: 90px;
+            opacity: 0.9;
         }
 
         .underline {
@@ -54,10 +65,6 @@
             height: 4px;
             background: var(--purple-accent);
             margin-top: 10px;
-        }
-
-        .header-logo img {
-            height: 90px;
         }
 
         nav {
@@ -78,10 +85,8 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.2s;
         }
 
-        /* Hover color applied consistently across all pages */
         nav a:hover {
             background: var(--medium-blue);
         }
@@ -142,15 +147,6 @@
             .footer-inner {
                 justify-content: center;
             }
-
-            .header-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-logo {
-                margin-top: 15px;
-            }
         }
     </style>
 </head>
@@ -159,15 +155,20 @@
 
 <header>
     <div class="header-inner">
-        <div>
-            <h1>Digital Platforms<br>
+        <div class="header-content">
+            <h1>
+                Digital Platforms
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
-            <div class="underline"></div>
+
+            <img
+                src="gallery/images/ssc-leaf-purple.png"
+                alt="Shared Services Canada"
+                class="header-logo"
+            >
         </div>
-        <div class="header-logo">
-            <img src="gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
-        </div>
+
+        <div class="underline"></div>
     </div>
 </header>
 
@@ -181,17 +182,30 @@
 </nav>
 
 <main>
-    <h2>Welcome to Digital Platforms</h2>
-    <p>Explore our innovative projects, gallery, and resources that help Shared Services Canada deliver efficient digital services across the Government of Canada.</p>
+    <h2>Purpose</h2>
+    <p>
+        This site provides an overview of Digital Platforms tradeshow content at Shared Services Canada (SSC). It brings together project highlights, reference materials, and visual assets that support collaboration and knowledge sharing across teams.
+    </p>
+    <p>
+        Featured initiatives include 3D Printing and Design, Radio Frequency Identification (RFID), Digital Twins, and Internet of Things (IoT). These projects demonstrate how SSC is exploring and applying emerging technologies to support reliable, secure, and modern digital services in alignment with Government of Canada priorities. It’s a space to connect, learn, and spark innovation across our teams and initiatives.
+    </p>
 </main>
 
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
+            <img
+                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
+                alt="Government of Canada"
+            >
         </div>
     </div>
 </footer>
 
 </body>
 </html>
+
+
+
+
+
