@@ -270,12 +270,19 @@
 
     nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        currentIndex = (currentIndex + images.length) % images.length;
+        currentIndex = (currentIndex + 1) % images.length;
         lightboxImg.src = images[currentIndex].src;
     });
 
     lightbox.addEventListener('click', () => {
         lightbox.style.display = 'none';
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display !== 'flex') return;
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') lightbox.style.display = 'none';
     });
 </script>
 
