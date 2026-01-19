@@ -8,11 +8,12 @@
 
     <style>
         :root {
-            --dark-blue: rgb(0,86,149);
-            --medium-blue: rgb(79,138,190);
-            --purple-accent: rgb(134,62,142);
-            --light-grey: #f5f6f7;
-            --border-grey: #dcdcdc;
+            /* GCWeb / SSC-aligned colours */
+            --dark-blue: #26374a;
+            --medium-blue: #2b4380;
+            --purple-accent: #6f2c91;
+            --light-grey: #f8f8f8;
+            --border-grey: #e1e4e7;
             --text-dark: #1a1a1a;
         }
 
@@ -33,7 +34,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 25px 20px;
-            display: flex; /* Flex to place logo right */
+            display: flex;
             align-items: center;
             justify-content: space-between;
         }
@@ -59,7 +60,7 @@
         }
 
         .header-logo img {
-            height: 90px; /* Fixed height as requested */
+            height: 90px;
         }
 
         /* Navigation */
@@ -145,7 +146,6 @@
             align-items: center;
         }
 
-        /* Canada wordmark */
         .canada-wordmark img {
             height: 32px;
             opacity: 0.85;
@@ -153,35 +153,13 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .sub-title {
-                font-size: 0.8em;
-            }
-
-            main {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .footer-inner {
-                justify-content: center;
-            }
-
-            .header-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-logo {
-                margin-top: 15px;
-            }
+            nav ul { flex-wrap: wrap; }
+            h1 { font-size: 2em; }
+            .sub-title { font-size: 0.8em; }
+            main { margin: 20px; padding: 25px; }
+            .footer-inner { justify-content: center; }
+            .header-inner { flex-direction: column; align-items: flex-start; }
+            .header-logo { margin-top: 15px; }
         }
     </style>
 </head>
@@ -198,7 +176,7 @@
             <div class="underline"></div>
         </div>
         <div class="header-logo">
-            <img src="gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+            <img src="gallery/images/ssc-leaf-purple.png" alt="Shared Services Canada">
         </div>
     </div>
 </header>
@@ -214,10 +192,17 @@
 
 <main>
     <h2>Contact</h2>
-    <p>For any print requests, customised designs or rapid prototyping inquiries, please contact <a href="mailto:aldina.paquette@ssc-spc.gc.ca">aldina.paquette@ssc-spc.gc.ca</a>.</p>
+    <p>
+        For any print requests, customised designs, or rapid prototyping inquiries,
+        please contact
+        <a href="mailto:aldina.paquette@ssc-spc.gc.ca">aldina.paquette@ssc-spc.gc.ca</a>.
+    </p>
 
     <h2>Our Team</h2>
-    <p>Reach out to the key team members for Digital Platforms initiatives. Click on a name to view their Government Electronic Directory Services (GEDS) profile.</p>
+    <p>
+        Reach out to the key team members for Digital Platforms initiatives.
+        Click on a name to view their Government Electronic Directory Services (GEDS) profile.
+    </p>
 
     <ul class="contact-list">
         <li><a href="https://www.geds-sage.gc.ca/en/GEDS?pgid=015&dn=Q049TUlDSEVMLkdBVVRISUVSOUBTU0MtU1BDLkdDLkNBLE9VPURFLUhOLE9VPUNUT0ItREdEUFQsT1U9U1NDLVNQQyxPPUdDLEM9Q0E=" target="_blank">Michel Gauthier</a></li>
@@ -232,14 +217,10 @@
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada">
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
 
 </body>
 </html>
-
-
