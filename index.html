@@ -8,25 +8,24 @@
 
     <style>
         :root {
-            /* GCWeb / SSC-aligned colours */
-            --dark-blue: #26374a;
-            --medium-blue: #2b4380;
-            --purple-accent: #6f2c91;
-            --light-grey: #f8f8f8;
-            --border-grey: #e1e4e7;
+            --dark-blue: rgb(0,86,149);
+            --medium-blue: rgb(79,138,190);
+            --purple-accent: rgb(134,62,142);
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
             --text-dark: #1a1a1a;
         }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: var(--gc-bg-light);
-            color: var(--gc-text-primary);
+            background: var(--light-grey);
+            color: var(--text-dark);
         }
 
         header {
             background: #ffffff;
-            border-bottom: 4px solid var(--gc-primary-blue);
+            border-bottom: 4px solid var(--dark-blue);
         }
 
         .header-inner {
@@ -54,6 +53,7 @@
             margin-top: 4px;
         }
 
+        /* ✅ Logo scaled to about half size */
         .header-logo {
             height: auto;
             max-height: 90px;
@@ -63,12 +63,12 @@
         .underline {
             width: 80px;
             height: 4px;
-            background: var(--ssc-accent-purple);
+            background: var(--purple-accent);
             margin-top: 10px;
         }
 
         nav {
-            background: var(--gc-primary-blue);
+            background: var(--dark-blue);
         }
 
         nav ul {
@@ -88,7 +88,7 @@
         }
 
         nav a:hover {
-            background: var(--gc-primary-blue-hover);
+            background: var(--medium-blue);
         }
 
         main {
@@ -96,13 +96,13 @@
             margin: 40px auto;
             padding: 40px;
             background: #ffffff;
-            border: 1px solid var(--gc-border-default);
+            border: 1px solid var(--border-grey);
             border-radius: 4px;
         }
 
         main h2 {
             margin-top: 0;
-            color: var(--gc-primary-blue);
+            color: var(--dark-blue);
         }
 
         main p {
@@ -112,7 +112,7 @@
 
         footer {
             background: #ffffff;
-            border-top: 1px solid var(--gc-border-default);
+            border-top: 1px solid var(--border-grey);
             margin-top: 60px;
         }
 
@@ -204,4 +204,8 @@
 
 </body>
 </html>
+
+
+
+
 
