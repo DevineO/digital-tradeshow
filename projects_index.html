@@ -8,25 +8,26 @@
 
     <style>
         :root {
-            --dark-blue: rgb(0,86,149);
-            --medium-blue: rgb(79,138,190);
-            --purple-accent: rgb(134,62,142);
-            --light-grey: #f5f6f7;
-            --border-grey: #dcdcdc;
-            --text-dark: #1a1a1a;
+            /* GCWeb / Canada.ca aligned colours */
+            --gc-primary-blue: #26374A;
+            --gc-primary-blue-hover: #1C2B3A;
+            --ssc-accent-purple: #863E8E;
+            --gc-bg-light: #F1F2F3;
+            --gc-border-default: #7D828B;
+            --gc-text-primary: #333333;
         }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: var(--light-grey);
-            color: var(--text-dark);
+            background: var(--gc-bg-light);
+            color: var(--gc-text-primary);
         }
 
         /* Header */
         header {
             background: #ffffff;
-            border-bottom: 4px solid var(--dark-blue);
+            border-bottom: 4px solid var(--gc-primary-blue);
         }
 
         .header-inner {
@@ -54,18 +55,19 @@
         .underline {
             width: 80px;
             height: 4px;
-            background: var(--purple-accent);
+            background: var(--ssc-accent-purple);
             margin-top: 10px;
         }
 
         .header-logo {
             max-height: 90px;
             height: auto;
+            opacity: 0.9;
         }
 
         /* Navigation */
         nav {
-            background: var(--dark-blue);
+            background: var(--gc-primary-blue);
         }
 
         nav ul {
@@ -85,7 +87,7 @@
         }
 
         nav a:hover {
-            background: var(--medium-blue);
+            background: var(--gc-primary-blue-hover);
         }
 
         /* Main content */
@@ -94,13 +96,13 @@
             margin: 40px auto;
             padding: 40px;
             background: #ffffff;
-            border: 1px solid var(--border-grey);
+            border: 1px solid var(--gc-border-default);
             border-radius: 4px;
         }
 
         main h2 {
             margin-top: 0;
-            color: var(--dark-blue);
+            color: var(--gc-primary-blue);
         }
 
         main p {
@@ -119,7 +121,7 @@
         .project-card {
             text-align: center;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--gc-text-primary);
             transition: transform 0.2s;
         }
 
@@ -141,7 +143,7 @@
         /* Footer */
         footer {
             background: #ffffff;
-            border-top: 1px solid var(--border-grey);
+            border-top: 1px solid var(--gc-border-default);
             margin-top: 60px;
         }
 
@@ -173,7 +175,8 @@
 <header>
     <div class="header-inner">
         <div>
-            <h1>Digital Platforms
+            <h1>
+                Digital Platforms
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
             <div class="underline"></div>
