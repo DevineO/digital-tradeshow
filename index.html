@@ -8,34 +8,30 @@
 
     <style>
         :root {
-            /* GCWeb / Canada.ca aligned colours */
-            --gc-primary-blue: #26374A;
-            --gc-primary-blue-hover: #1C2B3A;
-            --ssc-accent-purple: #863E8E;
-            --gc-bg-light: #F1F2F3;
-            --gc-border-default: #7D828B;
-            --gc-text-primary: #333333;
+            --dark-blue: rgb(0,86,149);      /* nav background */
+            --medium-blue: rgb(79,138,190);  /* hover color you like */
+            --purple-accent: rgb(134,62,142);
+            --light-grey: #f5f6f7;
+            --border-grey: #dcdcdc;
+            --text-dark: #1a1a1a;
         }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: var(--gc-bg-light);
-            color: var(--gc-text-primary);
+            background: var(--light-grey);
+            color: var(--text-dark);
         }
 
         header {
             background: #ffffff;
-            border-bottom: 4px solid var(--gc-primary-blue);
+            border-bottom: 4px solid var(--dark-blue);
         }
 
         .header-inner {
             max-width: 1100px;
             margin: 0 auto;
             padding: 25px 20px;
-        }
-
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,27 +44,24 @@
         }
 
         .sub-title {
-            display: block;
             font-size: 0.9em;
-            font-weight: normal;
-            margin-top: 4px;
-        }
-
-        .header-logo {
-            height: auto;
-            max-height: 90px;
-            opacity: 0.9;
+            display: block;
+            margin-top: 0.2em;
         }
 
         .underline {
             width: 80px;
             height: 4px;
-            background: var(--ssc-accent-purple);
+            background: var(--purple-accent);
             margin-top: 10px;
         }
 
+        .header-logo img {
+            height: 90px;
+        }
+
         nav {
-            background: var(--gc-primary-blue);
+            background: var(--dark-blue);
         }
 
         nav ul {
@@ -85,10 +78,12 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
+            transition: background 0.2s;
         }
 
+        /* Hover color applied consistently across all pages */
         nav a:hover {
-            background: var(--gc-primary-blue-hover);
+            background: var(--medium-blue);
         }
 
         main {
@@ -96,13 +91,13 @@
             margin: 40px auto;
             padding: 40px;
             background: #ffffff;
-            border: 1px solid var(--gc-border-default);
+            border: 1px solid var(--border-grey);
             border-radius: 4px;
         }
 
         main h2 {
             margin-top: 0;
-            color: var(--gc-primary-blue);
+            color: var(--dark-blue);
         }
 
         main p {
@@ -112,7 +107,7 @@
 
         footer {
             background: #ffffff;
-            border-top: 1px solid var(--gc-border-default);
+            border-top: 1px solid var(--border-grey);
             margin-top: 60px;
         }
 
@@ -147,6 +142,15 @@
             .footer-inner {
                 justify-content: center;
             }
+
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-logo {
+                margin-top: 15px;
+            }
         }
     </style>
 </head>
@@ -155,20 +159,15 @@
 
 <header>
     <div class="header-inner">
-        <div class="header-content">
-            <h1>
-                Digital Platforms
+        <div>
+            <h1>Digital Platforms<br>
                 <span class="sub-title">Shared Services Canada</span>
             </h1>
-
-            <img
-                src="gallery/images/ssc-leaf-purple.png"
-                alt="Shared Services Canada"
-                class="header-logo"
-            >
+            <div class="underline"></div>
         </div>
-
-        <div class="underline"></div>
+        <div class="header-logo">
+            <img src="gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+        </div>
     </div>
 </header>
 
@@ -182,22 +181,14 @@
 </nav>
 
 <main>
-    <h2>Purpose</h2>
-    <p>
-        This site provides an overview of Digital Platforms tradeshow content at Shared Services Canada (SSC). It brings together project highlights, reference materials, and visual assets that support collaboration and knowledge sharing across teams.
-    </p>
-    <p>
-        Featured initiatives include 3D Printing and Design, Radio Frequency Identification (RFID), Digital Twins, and Internet of Things (IoT). These projects demonstrate how SSC is exploring and applying emerging technologies to support reliable, secure, and modern digital services in alignment with Government of Canada priorities. It’s a space to connect, learn, and spark innovation across our teams and initiatives.
-    </p>
+    <h2>Welcome to Digital Platforms</h2>
+    <p>Explore our innovative projects, gallery, and resources that help Shared Services Canada deliver efficient digital services across the Government of Canada.</p>
 </main>
 
 <footer>
     <div class="footer-inner">
         <div class="canada-wordmark">
-            <img
-                src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"
-                alt="Government of Canada"
-            >
+            <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="Government of Canada">
         </div>
     </div>
 </footer>
