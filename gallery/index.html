@@ -8,11 +8,12 @@
 
     <style>
         :root {
-            --dark-blue: rgb(0,86,149);
-            --medium-blue: rgb(79,138,190);
-            --purple-accent: rgb(134,62,142);
-            --light-grey: #f5f6f7;
-            --border-grey: #dcdcdc;
+            /* GCWeb / SSC-aligned colours */
+            --dark-blue: #26374a;
+            --medium-blue: #2b4380;
+            --purple-accent: #6f2c91;
+            --light-grey: #f8f8f8;
+            --border-grey: #e1e4e7;
             --text-dark: #1a1a1a;
         }
 
@@ -26,7 +27,6 @@
         header {
             background: #ffffff;
             border-bottom: 4px solid var(--dark-blue);
-            position: relative;
         }
 
         .header-inner {
@@ -59,7 +59,7 @@
         }
 
         .header-logo img {
-            height: 90px; /* Adjust size as needed */
+            height: 90px;
         }
 
         nav {
@@ -171,6 +171,13 @@
             height: 32px;
             opacity: 0.85;
         }
+
+        @media (max-width: 768px) {
+            nav ul { flex-wrap: wrap; }
+            h1 { font-size: 2em; }
+            main { margin: 20px; padding: 25px; }
+            .footer-inner { justify-content: center; }
+        }
     </style>
 </head>
 
@@ -186,7 +193,7 @@
             <div class="underline"></div>
         </div>
         <div class="header-logo">
-            <img src="../gallery/images/ssc-leaf-purple.png" alt="SSC Logo">
+            <img src="../gallery/images/ssc-leaf-purple.png" alt="Shared Services Canada">
         </div>
     </div>
 </header>
@@ -263,24 +270,12 @@
 
     nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex = (currentIndex + images.length) % images.length;
         lightboxImg.src = images[currentIndex].src;
-    });
-
-    lightboxImg.addEventListener('click', (e) => {
-        e.stopPropagation();
     });
 
     lightbox.addEventListener('click', () => {
         lightbox.style.display = 'none';
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') prevBtn.click();
-            if (e.key === 'ArrowRight') nextBtn.click();
-            if (e.key === 'Escape') lightbox.style.display = 'none';
-        }
     });
 </script>
 
